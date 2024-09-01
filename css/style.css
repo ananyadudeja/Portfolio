@@ -1,0 +1,633 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100%;
+    z-index: 1000; /* Ensures the navbar stays above other elements */
+}
+
+body {
+    padding-top: 0px; /* Space for the fixed navbar */
+    background-color: #FDFAF7;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #FDFAF7; /* Semi-transparent overlay (black, 50% opacity) */
+    z-index: 0; /* Positioned behind other content */
+}
+
+.hero-section {
+    padding-top: 40px;
+    background-image: url('../images/bg.jpg'); /* Ensure this path is correct */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Ensure the body takes up the full height of the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Ensure the hero section is centered vertically */
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    color: #fff; /* Default text color for readability */
+
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Adjust the color and opacity as needed */
+    z-index: 1;
+}
+
+.hero-section h1 {
+    position: relative;
+    z-index: 2;
+    color:#FDFAF7;
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.hero-section h4 {
+        position: relative;
+        z-index: 2;
+        color: #CFCBBF;
+        font-size: 1.5em;
+        margin-bottom: 30px;
+        font-weight: normal;
+}
+
+.btn-explore {
+    background-color:  #6237C8;
+    color: white;
+    padding: 10px 20px;
+    border-color: whitesmoke;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.btn-explore:hover{
+background-color: #6237C8;
+}
+
+.about-section {
+    background-color: #FDFAF7; /* Background color for the section */
+    padding: 70px 20px;
+    color: #272525; /* Text color */
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allows content to wrap on smaller screens */
+}
+
+.about-image {
+    flex: 1;
+    padding-right: 200px; /* Space between image and text */
+}
+
+.about-image img {
+    max-width: 130%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.about-text {
+    flex: 2;
+}
+
+.about-text h2 {
+    background: linear-gradient(to right, #591CE6 5%, #F9598D 45%, #FB8B61 85%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;/* Heading color */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: #272525; /* Paragraph color */
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.about-details {
+    margin-top: 30px;
+}
+
+.detail {
+    background-color: #fdfaf7; /* Background color for detail boxes */
+    color: #272525; /* Text color in detail boxes */
+    padding: 18px; /* Reduced padding */
+    border-radius: 8px; /* Reduced border radius */
+    margin-bottom: 15px; /* Reduced margin */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Reduced shadow */
+}
+
+.detail h3 {
+    background: linear-gradient(to right, #591CE6 5%, #F9598D 45%, #FB8B61 85%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Heading color in detail boxes */
+    margin-bottom: 10px;
+    font-size: 1.5em; /* Reduced font size */
+}
+
+.detail p {
+    color: #272525; /* Paragraph color in detail boxes */
+    font-size: 1em; /* Reduced font size */
+}
+
+
+.skill-section {
+    background-color: #FDFAF7; /* Background color to cover the entire section */
+    padding: 70px 20px; /* Adjusted padding to ensure full-width coverage */
+    color: #272525; /* Text color */
+    width: 100vw; /* Full viewport width */
+    margin: 0; /* Remove margins to avoid extra white space */
+    box-sizing: border-box; /* Ensure padding is included in width calculations */
+}
+
+.skill-section h2 {
+    background: linear-gradient(to right, #591CE6 5%, #F9598D 45%, #FB8B61 85%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Heading color */
+    font-size: 3em; /* Increased font size */
+    margin-bottom: 20px;
+    text-align: center; /* Center align the heading */
+}
+
+.skill-section p {
+    color: #272525; /* Paragraph color */
+    font-size: 1.5em; /* Increased font size */
+    line-height: 1.6;
+    text-align: center; /* Center align the text */
+    margin-bottom: 30px;
+}
+
+.skill-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0; /* Remove extra padding if any */
+    box-sizing: border-box; /* Ensure padding is included in width calculations */
+}
+
+.skill-category {
+    flex: 1;
+    max-width: 30%; /* Adjust as needed for three columns */
+    padding: 20px;
+    background-color: #fdfaf7; /* Background color for each column */
+    border-radius: 8px;
+    margin: 10px;
+    color: #272525; /* Text color */
+    box-sizing: border-box; /* Ensure padding is included in width calculations */
+}
+
+.skill-category h3 {
+    background: linear-gradient(to right, #591CE6 5%, #F9598D 45%, #FB8B61 85%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Heading color in each column */
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.skill-category ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skill-category li {
+    margin-bottom: 8px;
+    font-size: 1.2em;
+}
+
+/* Project Section Styles */
+.project-section {
+    background-color: #fdfaf7;
+    padding: 70px 20px;
+    color: #272525;
+    width: 100vw;
+    margin: 0 auto;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.project-section h2 {
+    background: linear-gradient(to right, #591CE6 5%, #F9598D 45%, #FB8B61 85%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.project-section p {
+    color: #272525;
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.project-item {
+    background-color: #fdfaf7;
+    color: #272525;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(50% - 20px); /* Two items per row with gap accounted for */
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.arrow {
+    background-color: #fdfaf7;
+    background: linear-gradient(to right, #591CE6 5%, #F9598D 45%, #FB8B61 85%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 10px;
+    border-radius: 50px;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow span {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.project-content h3 {
+    background: linear-gradient(to right, #591CE6 5%, #F9598D 45%, #FB8B61 85%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.project-content p {
+    font-size: 1.2em;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .project-item {
+        width: calc(100% - 20px); /* Full width for smaller screens */
+    }
+}
+
+
+.contact-section{
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 70px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: #fdfaf7;
+    max-width: 800px;
+    margin: 70px auto 50px auto;
+    text-align: center;
+}
+
+.connect-section{
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 70px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: #272525;
+    max-width: 800px;
+    margin: 70px auto 50px auto;
+    text-align: center;
+}
+
+.education {
+    background-color: #FDFAF7; /* Light background color matching your theme */
+    padding: 50px 0;
+  }
+  
+  .education .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .education h2 {
+    background: linear-gradient(to right, #591CE6 5%, #F9598D 45%, #FB8B61 85%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Title color matching your theme */
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+  
+  .education table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .education th, .education td {
+    background: linear-gradient(to right, #591CE6 5%, #F9598D 45%, #FB8B61 85%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Border color matching your theme */
+    padding: 12px;
+    text-align: left;
+    color:  #E2E2E2;
+  }
+  
+  .education th {
+    background: linear-gradient(to right, #591CE6 5%, #F9598D 45%, #FB8B61 85%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Header background color matching your theme */
+    color:  #fdfaf7; /* Header text color matching your theme */
+  }
+  
+  .education tr:nth-child(even) {
+    background-color:  #FDFAF7; /* Alternating row color for readability */
+  }
+  
+  .education tr:hover {
+    background-color: #fdfaf7; /* Highlight row on hover */
+  }
+  
+  @media (max-width: 768px) {
+    .education table {
+      font-size: 0.9em; /* Adjust font size for smaller screens */
+    }
+  
+    .education th, .education td {
+      padding: 8px; /* Adjust padding for smaller screens */
+    }
+  }
+
+/* Service Section Styles */
+.service-section {
+    background-color: #fdfaf7;
+    padding: 80px 0;
+    color: #272525;
+}
+
+.service-section h2 {
+    background: linear-gradient(to right, #591CE6 5%, #F9598D 45%, #FB8B61 85%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.service-section p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.service-card {
+    background-color: #fdfaf7;
+    padding: 40px 30px;
+    border-radius: 8px;
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+}
+
+.service-card h3 {
+    background: linear-gradient(to right, #591CE6 5%, #F9598D 45%, #FB8B61 85%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #272525;
+    margin: 0;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+    .service-card {
+        padding: 30px 20px;
+    }
+
+    .service-section h2 {
+        font-size: 2rem;
+    }
+
+    .service-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .service-card p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Contact Section */
+.contact {
+    background-color:#FDFAF7; /* Background color matching your theme */
+    color: #272525; /* Text color for readability */
+    padding: 50px 0;
+  }
+  
+  .contact .container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center; /* Center align text */
+  }
+  
+  .contact h2 {
+    background: linear-gradient(to right, #591CE6 5%, #F9598D 45%, #FB8B61 85%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Title color matching your theme */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  .contact p {
+    color: #272525; /* Text color matching your theme */
+    font-size: 1.2em;
+    margin-bottom: 40px;
+  }
+  
+  .contact .contact-form {
+    background-color:#FDFAF7; /* Slightly lighter background for the form */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners for the form */
+    max-width: 600px;
+    margin: 0 auto; /* Center align the form */
+  }
+  
+  .contact-form h3 {
+    background: linear-gradient(to right, #591CE6 5%, #F9598D 45%, #FB8B61 85%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Header color matching your theme */
+    font-size: 1.8em;
+    margin-bottom: 20px;
+  }
+  
+  .contact-form label {
+    display: block;
+    color: #272525; /* Label color matching your theme */
+    margin-bottom: 8px;
+    font-size: 1.1em;
+  }
+  
+  .contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #591CE6 5%, #F9598D 45%, #FB8B61 85%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Border color matching your theme */
+    border-radius: 4px;
+    background-color: #FDFAF7; /* Input background color */
+    color: #272525; /* Input text color */
+  }
+  
+  .contact-form button {
+    background: linear-gradient(to right, #591CE6 5%, #F9598D 45%, #FB8B61 85%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Button background color matching your theme */
+    color: #FDFAF7; /* Button text color */
+    border: none;
+    padding: 15px 25px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .contact-form button:hover {
+    background-color: #272525; /* Button hover color */
+    color: #FDFAF7; /* Button text color on hover */
+  }
+  
+  @media (max-width: 768px) {
+    .contact h2 {
+      font-size: 2em; /* Adjust font size for smaller screens */
+    }
+  
+    .contact-form h3 {
+      font-size: 1.5em; /* Adjust font size for smaller screens */
+    }
+  
+    .contact-form input, .contact-form textarea {
+      padding: 8px;
+      font-size: 1em; /* Adjust font size for smaller screens */
+    }
+  
+    .contact-form button {
+      padding: 12px 20px;
+      font-size: 1em;
+    }
+  }
+
+  .connect-section {
+    background-color:#FDFAF7;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+.connect-container {
+    background-color: #FDFAF7; /* Container background color */
+    padding: 20px 40px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+.connect-title {
+    background: linear-gradient(to right, #591CE6 5%, #F9598D 45%, #FB8B61 85%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.connect-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.connect-icons .connect-icon img {
+    filter: grayscale(100%);
+    filter: brightness(0);
+}
+
+
+.connect-icon img {
+    width: 40px;
+    height: 40px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s, filter 0.3s; /* Smooth transition for hover effect */
+}
+
+.connect-icon img:hover {
+    transform: scale(1.2); /* Slightly increase the size on hover */
+    filter: brightness(0.5) invert(1); /* Darken the icon slightly on hover */
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FDFAF7; /* Set the background of the entire page to black */
+}
